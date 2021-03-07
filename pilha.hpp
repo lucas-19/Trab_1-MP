@@ -2,41 +2,27 @@
 #define PILHA_HPP
 #define CAPACITY 20
 
-#include <istream>
+#include <iostream>
 
-class ValueD {
+class Value {
     public:
         int value;
-        ValueD* next;
+        Value* next;
 };
 
-class ValueS {
-    public:
-        int value;
-};
-
-class StackD {
+class Stack {
     private:
-        ValueD* top;
+        Value* top;
         int size;
+        int stackS[CAPACITY];
 
     public:
-        StackD* createStack();
-        ValueD* push(StackD *stackD, ValueD item);
-        ValueD* pop(StackD *stackD);
-        ValueD* top(StackD *stackD);
-        ValueD* isEmpety(StackD *stackD);
-};
-
-class StackS {
-    private:
-        int size, top, capacity;
-        ValueS stackS[CAPACITY];
-    public:
-        ValueS* push(StackS *stackS, ValueS item);
-        ValueS* pop(StackS *stackS);
-        ValueS* top(StackS *stackS);
-        ValueS* isEmpety(StackS *stackS);
+        Stack* create();
+        void push(Stack *stack, Value item);
+        Value* pop(Stack *stack);
+        Value* topReturn(Stack *stack);
+        bool isEmpety(Stack *stack);
+        
 };
 
 
