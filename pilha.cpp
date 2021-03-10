@@ -84,8 +84,8 @@ using namespace std;
             if (stack->top == NULL) {
                 cout << "Todos os elementos foram retirados" << endl;
             }
-            free(stack);
             stack = NULL; 
+            free(stack);
             return true;
         } else {
             cout << "Erro ao deletar pilha, pilha vazia" << endl;

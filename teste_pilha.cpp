@@ -3,8 +3,13 @@ using namespace std;
 
 bool testCreate() { //okS
     Stack* aux = NULL;
-    aux = aux->create();    
-    return true;
+    aux = aux->create();
+    if(aux != NULL) {
+        free(aux);
+        return true;
+    } else {
+        return false;
+    }    
 }
 
 bool testPush() {
@@ -19,7 +24,7 @@ bool testPush() {
         cout << aux->topReturn(aux)->value << endl;
         if (aux->topReturn(aux)->value == element.value) {
             status = true;
-            
+            aux->destroy(aux);
         }
     }
     catch(invalid_argument& ia) {
@@ -65,8 +70,7 @@ bool testPop() {
             }
             status = aux->isEmpety(aux);
         }
-
-        
+        free(aux);
     }
     catch(invalid_argument& ia) {
         cout << ia.what() << endl;
@@ -84,6 +88,7 @@ bool testTop() {
         aux->push(aux, item);
         if(aux->topReturn(aux)->value == item.value) {
             status = true;
+            aux->destroy(aux);
         }
     }
     catch(invalid_argument& ia) {
