@@ -4,24 +4,26 @@
 
 #include <iostream>
 
-class Value {
+class ValueProps {
     public:
         int value;
-        Value* next;
+        ValueProps* next;
 };
 
 class Stack {
     private:
-        Value* top;
+        ValueProps* top; 
         int size;
-        int stackS[CAPACITY];
+        ValueProps* stack_s[CAPACITY]; 
 
     public:
         Stack* create();
-        void push(Stack *stack, Value item);
-        Value* pop(Stack *stack);
-        Value* topReturn(Stack *stack);
+        bool destroy(Stack *stack);
+        void push(Stack *stack, ValueProps item);
+        ValueProps* pop(Stack *stack);
+        ValueProps* topReturn(Stack *stack);
         bool isEmpety(Stack *stack);
+        bool isFull(Stack* stack);
         
 };
 
