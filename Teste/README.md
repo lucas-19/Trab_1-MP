@@ -1,0 +1,1 @@
+Para compilar e executar o programa é necessário executar o comando "make", para assim compilar o programa, e em seguida execute "./pilha", para executar o programa. A saída esperada são 5 resultados de testes diferentes sendo igual a 1 para sucesso.
